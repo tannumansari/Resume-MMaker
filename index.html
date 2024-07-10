@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="resume-form">
+            <h2>Personal Information</h2>
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="text" id="linkedin" placeholder="LinkedIn Profile">
+
+            <h2>Professional Summary</h2>
+            <textarea id="summary" placeholder="Professional Summary"></textarea>
+
+            <h2>Skills</h2>
+            <textarea id="skills" placeholder="List your skills"></textarea>
+
+            <h2>Education</h2>
+            <div id="education-section">
+                <input type="text" placeholder="Degree">
+                <input type="text" placeholder="Institution">
+                <input type="text" placeholder="Year of Graduation">
+                <textarea placeholder="Relevant coursework or achievements"></textarea>
+            </div>
+            <button type="button" onclick="addSection('education-section', 'Education')">Add More Education</button>
+
+            <h2>Experience</h2>
+            <div id="experience-section">
+                <input type="text" placeholder="Job Title">
+                <input type="text" placeholder="Company">
+                <input type="text" placeholder="Duration">
+                <textarea placeholder="Responsibilities and achievements"></textarea>
+            </div>
+            <button type="button" onclick="addSection('experience-section', 'Experience')">Add More Experience</button>
+
+            <h2>Projects</h2>
+            <div id="project-section">
+                <input type="text" placeholder="Project Title">
+                <textarea placeholder="Description"></textarea>
+                <input type="text" placeholder="Role in the project">
+                <textarea placeholder="Outcome or results"></textarea>
+            </div>
+            <button type="button" onclick="addSection('project-section', 'Project')">Add More Projects</button>
+
+            <h2>Certifications</h2>
+            <div id="certification-section">
+                <input type="text" placeholder="Certification Name">
+                <input type="text" placeholder="Issuing Organization">
+                <input type="text" placeholder="Date of Issue">
+            </div>
+            <button type="button" onclick="addSection('certification-section', 'Certification')">Add More Certifications</button>
+
+            <h2>Languages</h2>
+            <div id="language-section">
+                <input type="text" placeholder="Language">
+                <input type="text" placeholder="Proficiency Level">
+            </div>
+            <button type="button" onclick="addSection('language-section', 'Language')">Add More Languages</button>
+
+            <h2>References</h2>
+            <div id="reference-section">
+                <input type="text" placeholder="Name">
+                <input type="text" placeholder="Position">
+                <input type="text" placeholder="Contact Information">
+            </div>
+            <button type="button" onclick="addSection('reference-section', 'Reference')">Add More References</button>
+
+            <h2>Template Choice</h2>
+            <select id="template-choice">
+                <option value="modern">Modern</option>
+                <option value="classic">Classic</option>
+                <option value="creative">Creative</option>
+                <option value="technical">Technical</option>
+            </select>
+
+            <h2>Format Choice</h2>
+            <select id="format-choice">
+                <option value="pdf">PDF</option>
+                <option value="docx">Docx</option>
+                <option value="txt">Txt</option>
+            </select>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+
+        <div class="preview-container">
+            <h2>Live Preview</h2>
+            <div id="resume-preview"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@5/tinymce.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
